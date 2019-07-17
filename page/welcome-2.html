@@ -183,8 +183,8 @@
                 <div class="layui-card">
                     <div class="layui-card-header"><i class="fa fa-bullhorn icon icon-tip"></i>系统公告</div>
                     <div class="layui-card-body layui-text">
-                        <div class="layuimini-notice">
-                            <div class="layuimini-notice-title">修改选项卡样式</div>
+                        <div class="layuimini-notice1" data-iframe-tab="page/icon.html" data-title="图标列表" data-icon="fa fa-dot-circle-o">
+                            <div class="layuimini-notice-title">修改选项卡样式1</div>
                             <div class="layuimini-notice-extra">2019-07-11 23:06</div>
                             <div class="layuimini-notice-content layui-hide">
                                 界面足够简洁清爽。<br>
@@ -345,11 +345,7 @@
             layuimini = layui.layuimini,
             layer = layui.layer;
 
-        layuimini.msg_success('成功啊啊啊 demo');
-
-        $('body').on('click', '.demo', function () {
-            alert('点击iframe demo');
-        });
+        layuimini.msg_success('成功啊啊啊 demo11');
 
         /**
          * 查看公告信息
