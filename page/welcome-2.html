@@ -339,10 +339,11 @@
     }).extend({
         layuimini: "layuimini"
     });
-    layui.use(['layer', 'layuimini'], function () {
+    layui.use(['element', 'layer', 'layuimini'], function () {
         var $ = layui.jquery,
-            layer = layui.layer,
-            layuimini = layui.layuimini;
+            element = layui.element,
+            layuimini = layui.layuimini,
+            layer = layui.layer;
 
         layuimini.msg_success('成功啊啊啊');
 
