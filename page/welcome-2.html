@@ -114,7 +114,7 @@
                                 <div class="welcome-module">
                                     <div class="layui-row layui-col-space10 layuimini-qiuck">
                                         <div class="layui-col-xs3 layuimini-qiuck-module">
-                                            <a data-iframe-tab="page/menu.html" data-title="菜单管理" data-icon="fa fa-window-maximize">
+                                            <a data-iframe-tab1="page/menu.html" data-title="菜单管理" data-icon="fa fa-window-maximize">
                                                 <i class="fa fa-window-maximize"></i>
                                                 <cite>菜单管理</cite>
                                             </a>
@@ -345,46 +345,10 @@
             layuimini = layui.layuimini,
             layer = layui.layer;
 
-        layuimini.msg_success('成功啊啊啊');
+        layuimini.msg_success('成功啊啊啊1');
 
-        $('body').on('click', '[data-iframe-tab]', function () {
+        $('body').on('click', '[data-iframe-tab1]', function () {
             alert('点击iframe tab1');
-            var loading = parent.layer.load(0, {shade: false, time: 2 * 1000});
-            var tabId = $(this).attr('data-iframe-tab'),
-                href = $(this).attr('data-iframe-tab'),
-                icon = $(this).attr('data-icon'),
-                title = $(this).attr('data-title'),
-                target = $(this).attr('target');
-            if (target == '_blank') {
-                parent.layer.close(loading);
-                window.open(href, "_blank");
-                return false;
-            }
-            title = '<i class="' + icon + '"></i><span class="layui-left-nav"> ' + title + '</span>';
-            if (tabId == null || tabId == undefined) {
-                tabId = new Date().getTime();
-            }
-            // 判断该窗口是否已经打开过
-            var checkTab = layuimini.checkTab(tabId, true);
-
-            alert(checkTab);
-
-            if (!checkTab) {
-                var layuiminiTabInfo = JSON.parse(sessionStorage.getItem("layuiminiTabInfo"));
-                if (layuiminiTabInfo == null) {
-                    layuiminiTabInfo = {};
-                }
-                layuiminiTabInfo[tabId] = {href: href, title: title}
-                sessionStorage.setItem("layuiminiTabInfo", JSON.stringify(layuiminiTabInfo));
-                parent.layui.element.tabAdd('layuiminiTab', {
-                    title: title + '<i data-tab-close="" class="layui-icon layui-unselect layui-tab-close">ဆ</i>' //用于演示
-                    , content: '<iframe width="100%" height="100%" frameborder="0"  src="' + href + '"></iframe>'
-                    , id: tabId
-                });
-            }
-            parent.layui.element.tabChange('layuiminiTab', tabId);
-            layuimini.tabRoll();
-            parent.layer.close(loading);
         });
 
         /**
