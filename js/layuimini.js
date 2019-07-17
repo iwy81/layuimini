@@ -673,6 +673,7 @@ layui.define(["element", "jquery"], function (exports) {
      * 在iframe子菜单上打开新窗口
      */
     $('body').on('click', '[data-iframe-tab]', function () {
+        alert('点击iframe tab');
         var loading = parent.layer.load(0, {shade: false, time: 2 * 1000});
         var tabId = $(this).attr('data-iframe-tab'),
             href = $(this).attr('data-iframe-tab'),
@@ -690,6 +691,9 @@ layui.define(["element", "jquery"], function (exports) {
         }
         // 判断该窗口是否已经打开过
         var checkTab = layuimini.checkTab(tabId, true);
+
+        alert(checkTab);
+
         if (!checkTab) {
             var layuiminiTabInfo = JSON.parse(sessionStorage.getItem("layuiminiTabInfo"));
             if (layuiminiTabInfo == null) {
