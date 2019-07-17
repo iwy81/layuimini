@@ -872,5 +872,9 @@ layui.define(["element", "jquery"], function (exports) {
         layuimini.initBgColor();
     });
 
+    $('body').on('click', '.data-iframe-tab2', function () {
+        alert('点击iframe tab2');
+    });
+
     exports("layuimini", layuimini);
 });

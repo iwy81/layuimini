@@ -114,13 +114,13 @@
                                 <div class="welcome-module">
                                     <div class="layui-row layui-col-space10 layuimini-qiuck">
                                         <div class="layui-col-xs3 layuimini-qiuck-module">
-                                            <a data-iframe-tab1="page/menu.html" data-title="菜单管理" data-icon="fa fa-window-maximize">
+                                            <a class="data-iframe-tab1"  data-title="菜单管理" data-icon="fa fa-window-maximize">
                                                 <i class="fa fa-window-maximize"></i>
                                                 <cite>菜单管理</cite>
                                             </a>
                                         </div>
                                         <div class="layui-col-xs3 layuimini-qiuck-module">
-                                            <a data-iframe-tab="page/setting.html" data-title="系统设置" data-icon="fa fa-gears">
+                                            <a class="data-iframe-tab2" data-title="系统设置" data-icon="fa fa-gears">
                                                 <i class="fa fa-gears"></i>
                                                 <cite>系统设置</cite>
                                             </a>
@@ -347,7 +347,7 @@
 
         layuimini.msg_success('成功啊啊啊1');
 
-        $('body').on('click', '[data-iframe-tab1]', function () {
+        $('body').on('click', '.data-iframe-tab1', function () {
             alert('点击iframe tab1');
         });
 
